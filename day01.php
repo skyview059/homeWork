@@ -39,3 +39,28 @@ class Student{
 $kanny = new Student( );
 
 echo $kanny->result( 40 );
+
+
+
+class Division{
+
+	var $dividedBy 	= 7;
+	var $startPoint = 1;
+	var $endPoint 	= 2000;
+	
+	function result($dividedBy,$startPoint,$endPoint){
+		$total = 0;
+		$outPut = NULL;
+		
+		for( $i = $startPoint;$i<=$endPoint;$i++){
+			$outPut .= is_int($i / $dividedBy) ? $i ."<br/>" : false;
+			$total   = is_int($i / $dividedBy) ? $total + 1 : $total;
+		}
+		return $outPut . ' Match Times: '. $total;
+	}	
+}
+
+
+$Query = new Division();
+
+echo $Query->result(5,1,2000);
