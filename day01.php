@@ -1,5 +1,9 @@
 <?php
 
+$kanny = new Student( );
+echo $kanny->result( 40 );
+echo "<hr/>";
+
 class Student{
  
  	function result($mark = 0){
@@ -36,12 +40,12 @@ class Student{
 	}	
 }
 
-$kanny = new Student( );
-
-echo $kanny->result( 40 );
 
 
 
+$Query = new Division();
+echo $Query->result(5,1,2000);
+echo "<hr/>";
 class Division{
 
 	var $dividedBy 	= 7;
@@ -61,6 +65,27 @@ class Division{
 }
 
 
-$Query = new Division();
 
-echo $Query->result(5,1,2000);
+
+
+
+$myLottery = new lotteryResult();
+echo $myLottery->lotteryNumber( 2252, 7 );
+echo "<hr/>";
+
+
+class lotteryResult{
+	function lotteryNumber($lotteryNumber = 0,$multipleBy = 7){		
+		$total = 0;
+		$array = str_split($lotteryNumber);
+		
+		foreach($array as $list){
+			$total = $list + $total;			
+		}				
+		return is_int($total / $multipleBy) ? "You Win" : "Your tricket not match";		
+	}	
+}
+
+
+
+
